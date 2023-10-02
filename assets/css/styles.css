@@ -1,0 +1,56 @@
+:root {
+    --color-principal: #eeff56;
+    --color-fondo: #F1F1F1;
+    --color-notes: #CAD96B;
+    --color-selected-note: rgba(231, 231, 231, 0.79);
+    --color-transparent: transparent;
+    --color-text: black;
+}
+
+/* generel styles */
+
+html {
+    font-size: 10px;
+
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: #fefefe;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 2rem;
+    color: var(--color-text);
+}
+
+.layout {
+    border: 2px solid var(--color-text);
+    border-radius: 2rem;
+    position: relative;
+    min-width: 1300px;
+    width: 75%;
+    height: 80%;
+    min-height: 80vh;
+    margin: 0 auto;
+
+}
+
+.layout__aside {
+    background-color: var(--color-principal);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: none;
+}
+
+img {
+    border: 2px solid black;
+}
+
+.card-logo__img {
+    display: block;
+    margin: 0 auto; 
+}
+
+.footer__info {
+    text-align: center;
+}
