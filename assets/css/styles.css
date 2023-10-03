@@ -1,7 +1,8 @@
 :root {
     --color-principal: #eeff56;
-    --color-fondo: #F1F1F1;
+    --color-fondo: #ffffff;
     --color-notes: #CAD96B;
+    --color-layout-notes: rgba(209, 229, 223, 0.688);
     --color-selected-note: rgba(231, 231, 231, 0.79);
     --color-transparent: transparent;
     --color-text: black;
@@ -17,40 +18,73 @@ html {
 body {
     width: 100%;
     height: auto;
-    background-color: #fefefe;
+    background-color: #ffffff;
     font-family: 'Nanum Pen Script', cursive;
     font-size: 2rem;
     color: var(--color-text);
 }
 
 .layout {
-    border: 2px solid var(--color-text);
-    border-radius: 2rem;
     position: relative;
-    min-width: 1300px;
-    width: 75%;
+    min-width: 80%;
+    width: 80%;
     height: 80%;
-    min-height: 80vh;
+    min-height: 30vh;
     margin: 0 auto;
+
+    display: grid;
+    grid-template-areas: "aside notes_creator";
+    grid-template-columns: 25% 70%;
+
+    border-radius: 4rem;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .30);
 
 }
 
 .layout__aside {
+    grid-area: aside;
     background-color: var(--color-principal);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border: none;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    height: 50rem;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
-img {
-    border: 2px solid black;
+.layout__note-editor {
+    grid-area: notes_creator;
+    background-color: var(--color-layout-notes);
+}
+
+.aside__note {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-notes);
+    width: 95%;
+    height: 85px;
+    margin-top: 11px;
+    margin: 11px auto;
+    border-radius: 3rem;
+    background: rgba(55, 55, 55, 0.19);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 1.8rem;
+    overflow: hidden;
 }
 
 .card-logo__img {
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
+    width: 26%;
 }
 
 .footer__info {
     text-align: center;
+    margin-top: 3rem;
+}
+
+.layout__tools .tools__menu img {
+    width: 60%;
 }
