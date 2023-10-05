@@ -24,6 +24,9 @@ body {
     color: var(--color-text);
 }
 
+
+/* layout principal */
+
 .layout {
     position: relative;
     min-width: 80%;
@@ -34,12 +37,14 @@ body {
 
     display: grid;
     grid-template-areas: "aside notes_creator";
-    grid-template-columns: 25% 70%;
+    grid-template-columns: 25% 75%;
 
     border-radius: 4rem;
     box-shadow: 0 0 100px rgba(0, 0, 0, .30);
-
+    background-color: transparent;
 }
+
+/* layout created notes */
 
 .layout__aside {
     grid-area: aside;
@@ -51,6 +56,29 @@ body {
     overflow: auto;
     overflow-x: hidden;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.aside__note {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-notes);
+    width: 95%;
+    height: 85px;
+    margin-top: 11px;
+    margin: 11px auto;
+    border-radius: 3rem;
+    background: rgba(55, 55, 55, 0.19);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 1.8rem;
+    overflow: hidden;
+}
+
+.aside__note:hover {
+    background-color: var(--color-selected-note);
+    box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.25);
 }
 
 .layout__note-editor {
@@ -93,28 +121,7 @@ body {
 
 
 
-.aside__note {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-notes);
-    width: 95%;
-    height: 85px;
-    margin-top: 11px;
-    margin: 11px auto;
-    border-radius: 3rem;
-    background: rgba(55, 55, 55, 0.19);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-    overflow-x: hidden;
-    padding-left: 20px;
-    padding-top: 9px;
-    font-size: 1.8rem;
-    overflow: hidden;
-}
 
-.aside__note:hover {
-    background-color: var(--color-selected-note);
-    box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.25);
-}
 
 
 .card-logo__img {
@@ -123,22 +130,39 @@ body {
     width: 26%;
 }
 
+
+/* footer */
+
 .footer__info {
     margin-top: 3rem;
-    bottom: 2rem;
     text-align: center;
-    width: auto;
+    position: absolute;
+    left: 41%;
+    bottom: 5px;
 }
 
 
+/* Styles of tools */
 
-
-
-
-/* prubas en CSS */
-
-.conteiner {
-    width: 100%;
-    background-color: aqua;
-    height: 700px;
+.layout__tools {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 1rem;
 }
+
+.tools__menu {
+    margin: 10rem auto;;
+}
+.tools__menu img{
+    width: 45px;
+}
+
+.tools__menu button{
+    background-color: var(--color-transparent);
+    width: 5rem;
+    border: none;
+    border-radius: 1rem;
+    margin: 2rem 0px;
+}
+
