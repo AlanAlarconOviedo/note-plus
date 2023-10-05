@@ -2,7 +2,7 @@
     --color-principal: #eeff56;
     --color-fondo: #ffffff;
     --color-notes: #CAD96B;
-    --color-layout-notes: rgba(209, 229, 223, 0.688);
+    --color-layout-notes: #F1F1F1;
     --color-selected-note: rgba(231, 231, 231, 0.79);
     --color-transparent: transparent;
     --color-text: black;
@@ -46,15 +46,52 @@ body {
     background-color: var(--color-principal);
     border-top-left-radius: 4rem;
     border-bottom-left-radius: 4rem;
-    height: 50rem;
+    height: 40rem;
+    
     overflow: auto;
     overflow-x: hidden;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .layout__note-editor {
     grid-area: notes_creator;
-    background-color: var(--color-layout-notes);
+    background-color: var(--color-principal);
+    border-bottom-right-radius: 4rem;
+    border-top-right-radius: 4rem;
+    height: 100%;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.1);
+
 }
+
+.note-editor {
+    background-color: var(--color-layout-notes);
+    height: 100%;
+    border-radius: 4rem;
+    flex-direction: column;
+    display: flex;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.note-editor__text, .note-editor__body:focus{
+    background-color: var(--color-transparent);
+    border: none;
+    outline: none;
+}
+
+.note-editor__body {
+    background-color: var(--color-transparent);
+    border: none;
+    height: 90%;
+}
+
+.note-editor__body:focus {
+    outline: none;
+}
+
+
 
 .aside__note {
     display: flex;
@@ -74,6 +111,12 @@ body {
     overflow: hidden;
 }
 
+.aside__note:hover {
+    background-color: var(--color-selected-note);
+    box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.25);
+}
+
+
 .card-logo__img {
     display: block;
     margin: 0 auto;
@@ -81,10 +124,21 @@ body {
 }
 
 .footer__info {
-    text-align: center;
     margin-top: 3rem;
+    bottom: 2rem;
+    text-align: center;
+    width: auto;
 }
 
-.layout__tools .tools__menu img {
-    width: 60%;
+
+
+
+
+
+/* prubas en CSS */
+
+.conteiner {
+    width: 100%;
+    background-color: aqua;
+    height: 700px;
 }
