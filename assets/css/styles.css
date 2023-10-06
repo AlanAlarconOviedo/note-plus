@@ -5,7 +5,9 @@
     --color-layout-notes: #F1F1F1;
     --color-selected-note: rgba(231, 231, 231, 0.79);
     --color-transparent: transparent;
-    --color-text: black;
+    --color-text: black; 
+    --cursor:  url(../img/custom-cursor.png), auto;
+    --pointer: url(../img/custom-pointer.png), auto; ;
 }
 
 /* generel styles */
@@ -50,7 +52,7 @@ body {
     background-color: blue;
 }
 
-/* layout created notes */
+/* Layout notes-created */
 
 .layout__aside {
     grid-area: aside;
@@ -65,7 +67,7 @@ body {
 }
 
 
-/* new notes box*/
+/* New notes-box*/
 
 .aside__note {
     display: flex;
@@ -91,7 +93,7 @@ body {
 }
 
 
-/* note editor layout*/
+/* Note editor-layout*/
 
 .layout__note-editor {
     grid-area: notes_creator;
@@ -103,7 +105,7 @@ body {
 
 }
 
-/* note editor area*/
+/* Note Editor-area*/
 
 .note-editor {
     background-color: var(--color-layout-notes);
@@ -114,20 +116,28 @@ body {
     padding-left: 3rem;
     padding-top: 3rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+}
+
+.note-editor__title {
+    font-size: 30px; 
+    cursor: var(--cursor)
 }
 
 
-.note-editor__text,
+.note-editor__title,
 .note-editor__body:focus {
     background-color: var(--color-transparent);
-    border: none;
     outline: none;
+    border: none;
 }
 
 .note-editor__body {
     background-color: var(--color-transparent);
-    border: none;
     height: 90%;
+    border: none;
+    width: 92%;
+    cursor: var(--cursor);
 }
 
 .note-editor__body:focus {
@@ -135,18 +145,15 @@ body {
 }
 
 
-/* Styles of tools */
+/* Tools */
 
 .layout__tools {
     position: absolute;
-    display: block;
+    display: flex;
     top: 0;
     right: 1rem;
-}
-
-.tools__menu {
-    margin: 10rem auto;
-    ;
+    height: 100%;
+    align-items: center;
 }
 
 .tools__menu img {
@@ -161,7 +168,28 @@ body {
     margin: 2rem 0px;
 }
 
-/* footer */
+
+.hidden-paragraph {
+    position: absolute;
+    left: 70px;
+    margin-top: -34px;
+    transition: opacity 0.9s ease; 
+    opacity: 0;
+}
+
+.hidden-img {
+    transition: opacity 0.9s ease; 
+    opacity: 1;
+}
+
+button:hover .hidden-paragraph {
+    opacity: 1;
+}
+
+button:hover {
+    cursor: var(--pointer);
+}
+/* Footer */
 
 .footer__info {
     margin-top: 3rem;
@@ -169,4 +197,9 @@ body {
     position: absolute;
     bottom: 1rem;
     width: 100%;
+}
+
+.footer__info a {
+    cursor: var(--pointer);
+    
 }
